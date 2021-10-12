@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - DeathObstacle/Spike
+  - DeathObstacle/Water
+  - DeathObstacle/Eagle
+  - Coins
+  - DeathObstacle/Skeleton
+  - DeathObstacle/Goblin
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Platforms
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: ParallaxBackground
+    uniqueID: 3332823513
+    locked: 0
+  - name: Environment
+    uniqueID: 1065924971
+    locked: 0
+  - name: Background
+    uniqueID: 3253203939
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 1546547147
+    locked: 0
