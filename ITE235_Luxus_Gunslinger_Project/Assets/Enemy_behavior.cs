@@ -40,7 +40,7 @@ public class Enemy_behavior : MonoBehaviour
             Move();
         }
 
-        if (!InsideOfLimits() && !inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("Skeleton_Attack"))
+        if (!InsideOfLimits() && !inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack"))
         {
             SelectTarget();
         }
@@ -121,7 +121,7 @@ public class Enemy_behavior : MonoBehaviour
     {
         anim.SetBool("canWalk", true);
 
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Skeleton_Attack"))
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack"))
         {
             Vector2 targetPosition = new Vector2(target.position.x, transform.position.y);
 
