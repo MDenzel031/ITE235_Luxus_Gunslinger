@@ -168,6 +168,10 @@ PrefabInstance:
       propertyPath: rightLimit
       value: 
       objectReference: {fileID: 5678978108986627116}
+    - target: {fileID: 9024422061023853215, guid: 358634cfd446bb34897d141a6e95cb97, type: 3}
+      propertyPath: m_Constraints
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 358634cfd446bb34897d141a6e95cb97, type: 3}
 --- !u!4 &3743327525176424953 stripped
