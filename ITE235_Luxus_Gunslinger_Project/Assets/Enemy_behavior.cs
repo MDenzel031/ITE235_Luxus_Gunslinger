@@ -5,23 +5,24 @@ using UnityEngine;
 public class Enemy_behavior : MonoBehaviour
 {
     #region Public Variables
-    public Transform rayCast;
-    public LayerMask raycastMask;
     public float rayCastLength;
     public float attackDistance; //Minimum distance for attack
     public float moveSpeed;
     public float timer; //Timer for cooldown between attacks
     public Transform leftLimit;
     public Transform rightLimit;
+    [HideInInspector] public Transform target;
+    [HideInInspector] public bool inRange; //Check if Player is in range
+    public GameObject hotZone;
+    public GameObject TriggerArea;
+
     #endregion
 
     #region Private Variables
-    private RaycastHit2D hit;
-    private Transform target;
+    private Transform goblin;
     private Animator anim;
     private float distance; //Store the distance b/w enemy and player
     private bool attackMode;
-    private bool inRange; //Check if Player is in range
     private bool cooling; //Check if Enemy is cooling after attack
     private float intTimer;
     #endregion
@@ -31,6 +32,8 @@ public class Enemy_behavior : MonoBehaviour
         SelectTarget();
         intTimer = timer; //Store the inital value of timer
         anim = GetComponent<Animator>();
+        goblin = gameObject.transform;
+        Debug.Log(goblin.transform.localScale);
     }
 
     void Update()
@@ -45,57 +48,34 @@ public class Enemy_behavior : MonoBehaviour
             SelectTarget();
         }
 
-        if (inRange)
-        {
-            hit = Physics2D.Raycast(rayCast.position, transform.right, rayCastLength, raycastMask);
-            RaycastDebugger();
-        }
 
-        //When Player is detected
-        if (hit.collider != null)
+
+        if (inRange)
         {
             EnemyLogic();
         }
-        else if (hit.collider == null)
-        {
-            inRange = false;
-        }
-
-        if (inRange == false)
-        {
-            StopAttack();
-        }
     }
 
-    void OnTriggerEnter2D(Collider2D trig)
-    {
-        if (trig.gameObject.tag == "Player")
-        {
-            target = trig.transform;
-            inRange = true;
-            Flip();
-        }
-    }
 
-    private void OnTriggerExit2D(Collider2D trig)
-    {
-        if (trig.gameObject.tag == "Player")
-        {
-            target = trig.transform;
-            inRange = true;
-            Flip();
-        }
-    }
+    //private void OnTriggerExit2D(Collider2D trig)
+    //{
+    //    if (trig.gameObject.tag == "Player")
+    //    {
+    //        target = trig.transform;
+    //        inRange = true;
+    //        Flip();
+    //    }
+    //}
 
-    private void OnTriggerStay2D(Collider2D trig)
-    {
-        if (trig.gameObject.tag == "Player")
-        {
-            target = trig.transform;
-            inRange = true;
-            Flip();
-        }
-    }
+    //private void OnTriggerStay2D(Collider2D trig)
+    //{
+    //    if (trig.gameObject.tag == "Player")
+    //    {
+    //        target = trig.transform;
+    //        inRange = true;
+    //        Flip();
+    //    }
+    //}
 
     void EnemyLogic()
     {
@@ -120,9 +100,9 @@ public class Enemy_behavior : MonoBehaviour
     void Move()
     {
         anim.SetBool("canWalk", true);
-
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack"))
         {
+            
             Vector2 targetPosition = new Vector2(target.position.x, transform.position.y);
 
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
@@ -136,6 +116,7 @@ public class Enemy_behavior : MonoBehaviour
 
         anim.SetBool("canWalk", false);
         anim.SetBool("Attack", true);
+
     }
 
     void Cooldown()
@@ -156,17 +137,6 @@ public class Enemy_behavior : MonoBehaviour
         anim.SetBool("Attack", false);
     }
 
-    void RaycastDebugger()
-    {
-        if (distance > attackDistance)
-        {
-            Debug.DrawRay(rayCast.position, transform.right * rayCastLength, Color.red);
-        }
-        else if (attackDistance > distance)
-        {
-            Debug.DrawRay(rayCast.position, transform.right * rayCastLength, Color.green);
-        }
-    }
 
     public void TriggerCooling()
     {
@@ -178,7 +148,7 @@ public class Enemy_behavior : MonoBehaviour
         return transform.position.x > leftLimit.position.x && transform.position.x < rightLimit.position.x;
     }
 
-    private void SelectTarget()
+    public void SelectTarget()
     {
         float distanceToLeft = Vector3.Distance(transform.position, leftLimit.position);
         float distanceToRight = Vector3.Distance(transform.position, rightLimit.position);
@@ -198,7 +168,7 @@ public class Enemy_behavior : MonoBehaviour
         Flip();
     }
 
-    void Flip()
+    public void Flip()
     {
         Vector3 rotation = transform.eulerAngles;
         if (transform.position.x > target.position.x)

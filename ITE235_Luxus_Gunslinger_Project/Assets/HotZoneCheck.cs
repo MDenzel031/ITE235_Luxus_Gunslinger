@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class HotZoneCheck : MonoBehaviour
 {
-    private Goblin_behavior goblin_behavior;
+    private Enemy_behavior EnemyParent;
     private bool inRange;
-    private Animator anim;
+    public Animator anim;
 
     private void Awake()
     {
-        goblin_behavior = GetComponentInParent<Goblin_behavior>();
-        anim = GetComponentInParent<Animator>();
+        EnemyParent = GetComponentInParent<Enemy_behavior>();
     }
 
     private void Update()
     {
         if(inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack"))
         {
-            goblin_behavior.Flip();
+            EnemyParent.Flip();
         }
     }
 
@@ -37,9 +36,9 @@ public class HotZoneCheck : MonoBehaviour
         {
             inRange = false;
             gameObject.SetActive(false);
-            goblin_behavior.hotZone.SetActive(true);
-            goblin_behavior.inRange = false;
-            goblin_behavior.SelectTarget();
+            EnemyParent.TriggerArea.SetActive(true);
+            EnemyParent.inRange = false;
+            EnemyParent.SelectTarget();
         }
     }
 }

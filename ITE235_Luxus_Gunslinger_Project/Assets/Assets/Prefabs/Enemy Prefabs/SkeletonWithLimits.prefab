@@ -100,6 +100,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3130553700359176826}
     m_Modifications:
+    - target: {fileID: 1939551738694045156, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 8244489701163711738}
     - target: {fileID: 4294333159205759595, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -180,10 +184,19 @@ PrefabInstance:
       propertyPath: rightLimit
       value: 
       objectReference: {fileID: 3130553701691072431}
+    - target: {fileID: 8427082092839443024, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
 --- !u!4 &8244489701163711736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6420929871028748409, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
+  m_PrefabInstance: {fileID: 3130553700194958465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8244489701163711738 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6420929871028748411, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
   m_PrefabInstance: {fileID: 3130553700194958465}
   m_PrefabAsset: {fileID: 0}

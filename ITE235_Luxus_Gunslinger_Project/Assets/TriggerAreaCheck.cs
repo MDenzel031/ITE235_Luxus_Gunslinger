@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TriggerAreaCheck : MonoBehaviour
 {
-    private Goblin_behavior goblin_behavior;
+    private Enemy_behavior enemyParent;
 
     private void Awake()
     {
-        goblin_behavior = GetComponentInParent<Goblin_behavior>();
+        enemyParent = GetComponentInParent<Enemy_behavior>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,9 +16,9 @@ public class TriggerAreaCheck : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             gameObject.SetActive(false);
-            goblin_behavior.target = collision.transform;
-            goblin_behavior.inRange = true;
-            goblin_behavior.hotZone.SetActive(true);
+            enemyParent.target = collision.transform;
+            enemyParent.inRange = true;
+            enemyParent.hotZone.SetActive(true);
         }
     }
 }
