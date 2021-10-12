@@ -18,7 +18,7 @@ public class CompleteLevelScript : MonoBehaviour
 
     public void nextLevel()
     {
-        FindObjectOfType<GameManager>().restartLevel();
+        FindObjectOfType<GameManager>().nextLevel();
     }
 
     public void Quit()
