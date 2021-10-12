@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class EnemyWithWeapon : MonoBehaviour
 {
 
     public int maxHealth = 100;
@@ -16,28 +15,6 @@ public class Enemy : MonoBehaviour
     public GameObject deathAnimation;
     public bool hasDeathAnimation;
 
-    // Start is called before the first frame update
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-            PlayerHealth player = collision.collider.GetComponent<PlayerHealth>();
-
-            if (player != null)
-            {
-                player.takeDamage(damage);
-
-            }
-        
-            
-        
-    }
 
 
     void Start()
@@ -51,7 +28,7 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
         healthbar.setHealth(currentHealth);
         FindObjectOfType<AudioManager>().playSound("enemyHit");
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             if (hasDeathAnimation)
             {
@@ -69,12 +46,12 @@ public class Enemy : MonoBehaviour
 
     void destroyEnemy()
     {
-        
+
 
         Instantiate(popupCoin, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
         FindObjectOfType<GameManager>().addAmountToCoins(coinPoints);
-        
+
 
 
     }

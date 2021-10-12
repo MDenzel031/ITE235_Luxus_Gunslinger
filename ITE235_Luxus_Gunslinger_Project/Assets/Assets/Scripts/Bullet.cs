@@ -18,9 +18,9 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Enemy enemy = collision.GetComponent<Enemy>();
+        EnemyWithWeapon enemy2 = collision.GetComponent<EnemyWithWeapon>();
 
-
-        if(enemy  != null)
+        if (enemy  != null)
         {
 
             if (rb.velocity.x < 0)
@@ -35,6 +35,11 @@ public class Bullet : MonoBehaviour
 
             enemy.takeDamage(damage);
 
+        }
+
+        if(enemy2 != null)
+        {
+            enemy2.takeDamage(damage);
         }
 
         if(collision.tag != "Coins")

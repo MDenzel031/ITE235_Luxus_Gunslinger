@@ -81,25 +81,25 @@ public class Goblin_behavior : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D trig)
-    {
-        if (trig.gameObject.tag == "Player")
-        {
-            target = trig.transform;
-            inRange = true;
-            Flip();
-        }
-    }
+    //private void OnTriggerExit2D(Collider2D trig)
+    //{
+    //    if (trig.gameObject.tag == "Player")
+    //    {
+    //        target = trig.transform;
+    //        inRange = true;
+    //        Flip();
+    //    }
+    //}
 
-    private void OnTriggerStay2D(Collider2D trig)
-    {
-        if (trig.gameObject.tag == "Player")
-        {
-            target = trig.transform;
-            inRange = true;
-            Flip();
-        }
-    }
+    //private void OnTriggerStay2D(Collider2D trig)
+    //{
+    //    if (trig.gameObject.tag == "Player")
+    //    {
+    //        target = trig.transform;
+    //        inRange = true;
+    //        Flip();
+    //    }
+    //}
 
     void EnemyLogic()
     {

@@ -223,9 +223,9 @@ GameObject:
   - component: {fileID: 6420929871028748411}
   - component: {fileID: 6420929871028748408}
   - component: {fileID: 6420929871028748413}
-  - component: {fileID: 6420929871028748412}
   - component: {fileID: 6420929871028748414}
   - component: {fileID: 6420929871028748415}
+  - component: {fileID: -8415965533680399335}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: DeathObstacle/Skeleton
@@ -365,23 +365,6 @@ MonoBehaviour:
   timer: 1
   leftLimit: {fileID: 0}
   rightLimit: {fileID: 0}
---- !u!114 &6420929871028748412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6420929871028748358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 732b3ab245cef5c4c9bafd948759b621, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 150
-  coinPoints: 5
-  damage: 20
-  healthbar: {fileID: 4294333161031473377}
-  popupCoin: {fileID: 8167128394790069108, guid: 2b6c03c0530330a47a08ffb108bee517, type: 3}
 --- !u!61 &6420929871028748414
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -424,6 +407,25 @@ CircleCollider2D:
   m_Offset: {x: -0.046751406, y: -0.11447256}
   serializedVersion: 2
   m_Radius: 0.047316484
+--- !u!114 &-8415965533680399335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420929871028748358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98b584b66d8dd24783f8a06cb24dbbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 200
+  coinPoints: 5
+  damage: 20
+  healthbar: {fileID: 4294333161031473377}
+  popupCoin: {fileID: 8167128394790069108, guid: 2b6c03c0530330a47a08ffb108bee517, type: 3}
+  deathAnimation: {fileID: 3217268182981462275, guid: dba13f7345173814d9e06c635a1fe424, type: 3}
+  hasDeathAnimation: 1
 --- !u!1 &6420929871169301527
 GameObject:
   m_ObjectHideFlags: 0
