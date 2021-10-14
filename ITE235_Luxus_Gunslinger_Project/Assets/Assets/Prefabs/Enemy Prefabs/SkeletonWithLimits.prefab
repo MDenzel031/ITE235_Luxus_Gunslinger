@@ -100,6 +100,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3130553700359176826}
     m_Modifications:
+    - target: {fileID: -8415965533680399335, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
+      propertyPath: hitBox
+      value: 
+      objectReference: {fileID: 8244489701220985172}
     - target: {fileID: 1939551738694045156, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
       propertyPath: anim
       value: 
@@ -111,6 +115,14 @@ PrefabInstance:
     - target: {fileID: 4294333159205759595, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420929871018661333, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6420929871018661333, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
+      propertyPath: m_TagString
+      value: Coins
       objectReference: {fileID: 0}
     - target: {fileID: 6420929871028748358, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
       propertyPath: m_Name
@@ -198,5 +210,10 @@ Transform:
 --- !u!95 &8244489701163711738 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6420929871028748411, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
+  m_PrefabInstance: {fileID: 3130553700194958465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8244489701220985172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6420929871018661333, guid: 50ce6cf0cd5cde84c9d5a993cadc06f9, type: 3}
   m_PrefabInstance: {fileID: 3130553700194958465}
   m_PrefabAsset: {fileID: 0}

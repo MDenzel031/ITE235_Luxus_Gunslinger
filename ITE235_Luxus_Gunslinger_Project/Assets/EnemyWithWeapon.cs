@@ -14,6 +14,7 @@ public class EnemyWithWeapon : MonoBehaviour
     public GameObject popupCoin;
     public GameObject deathAnimation;
     public bool hasDeathAnimation;
+    public GameObject hitBox;
 
 
 
@@ -21,7 +22,8 @@ public class EnemyWithWeapon : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthbar.setMaxHealth(maxHealth);
-    }
+
+    }    
 
     public void takeDamage(int damage)
     {
@@ -53,6 +55,17 @@ public class EnemyWithWeapon : MonoBehaviour
         FindObjectOfType<GameManager>().addAmountToCoins(coinPoints);
 
 
+
+    }
+
+    public void enableWeaponHitbox()
+    {
+        hitBox.SetActive(true);
+    }
+
+    public void disableWeaponHitbox()
+    {
+        hitBox.SetActive(false);
 
     }
 

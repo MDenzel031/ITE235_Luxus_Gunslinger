@@ -6,11 +6,12 @@ public class HotZoneCheck : MonoBehaviour
 {
     private Enemy_behavior EnemyParent;
     private bool inRange;
-    public Animator anim;
+    private Animator anim;
 
     private void Awake()
     {
         EnemyParent = GetComponentInParent<Enemy_behavior>();
+        anim = GetComponentInParent<Animator>();
     }
 
     private void Update()

@@ -42,7 +42,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 3789213157608795658}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 33cc154bc0367dc41a3c4d5993804376, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -90,6 +90,7 @@ MonoBehaviour:
   popupCoin: {fileID: 8167128394790069108, guid: 2b6c03c0530330a47a08ffb108bee517, type: 3}
   deathAnimation: {fileID: 3621028280228213039, guid: 715ebb9a7c4136b4089dae2ca0448ecc, type: 3}
   hasDeathAnimation: 1
+  hitBox: {fileID: 3789213157565508296}
 --- !u!1 &6348503598500070659
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +322,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1546547147
       objectReference: {fileID: 0}
+    - target: {fileID: 7822637281610475046, guid: e8eb93a0c1a5a464e812f885656158c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7822637281699767010, guid: e8eb93a0c1a5a464e812f885656158c4, type: 3}
       propertyPath: goblin
       value: 
@@ -440,6 +445,11 @@ Animator:
 --- !u!1 &3789213157167542043 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7822637281738892277, guid: e8eb93a0c1a5a464e812f885656158c4, type: 3}
+  m_PrefabInstance: {fileID: 6348503599038008558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3789213157565508296 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7822637281610475046, guid: e8eb93a0c1a5a464e812f885656158c4, type: 3}
   m_PrefabInstance: {fileID: 6348503599038008558}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4915104179166511716 stripped

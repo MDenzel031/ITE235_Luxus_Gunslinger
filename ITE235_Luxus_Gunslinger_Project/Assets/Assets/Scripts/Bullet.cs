@@ -42,9 +42,10 @@ public class Bullet : MonoBehaviour
             enemy2.takeDamage(damage);
         }
 
-        if(collision.tag != "Coins")
+        if(collision.tag != "Coins" && collision.gameObject.name != "HotZone")
         {
             Destroy(gameObject);
+            Debug.Log(collision.gameObject.name);
         }
     }
 }
