@@ -69,8 +69,8 @@ public class Enemy : MonoBehaviour
 
     void destroyEnemy()
     {
-        
 
+        popupCoin.GetComponent<CoinPopScript>().coins = coinPoints;
         Instantiate(popupCoin, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
         FindObjectOfType<GameManager>().addAmountToCoins(coinPoints);

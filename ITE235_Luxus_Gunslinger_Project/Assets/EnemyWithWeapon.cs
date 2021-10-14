@@ -50,6 +50,7 @@ public class EnemyWithWeapon : MonoBehaviour
     {
 
 
+        popupCoin.GetComponent<CoinPopScript>().coins = coinPoints;
         Instantiate(popupCoin, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
         FindObjectOfType<GameManager>().addAmountToCoins(coinPoints);
