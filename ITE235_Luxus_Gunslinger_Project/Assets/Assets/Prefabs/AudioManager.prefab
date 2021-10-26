@@ -59,14 +59,14 @@ MonoBehaviour:
   - name: gunShot
     clip: {fileID: 8300000, guid: 401a862cdab018348a207e7ba72e1146, type: 3}
     source: {fileID: 0}
-    volume: 0.2
-    pitch: 2
+    volume: 0.1
+    pitch: 3
     loop: 0
   - name: enemyHit
     clip: {fileID: 8300000, guid: 401a862cdab018348a207e7ba72e1146, type: 3}
     source: {fileID: 0}
-    volume: 0.4
-    pitch: 2.5
+    volume: 0.05
+    pitch: 3
     loop: 0
   - name: bonusHeal
     clip: {fileID: 8300000, guid: c78c80df6074640429610fb21181cda9, type: 3}
@@ -113,12 +113,30 @@ MonoBehaviour:
   - name: SwordSwing
     clip: {fileID: 8300000, guid: 55b664d39eec65645be2f79e4e0f0602, type: 3}
     source: {fileID: 0}
-    volume: 0.4
+    volume: 0.1
     pitch: 1
     loop: 0
   - name: PlayerHurt
     clip: {fileID: 8300000, guid: 551314e16b07c0149b598c563783cdb7, type: 3}
     source: {fileID: 0}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+  - name: JumpSound
+    clip: {fileID: 8300000, guid: bce41540a1d106845979fcf2f84b555d, type: 3}
+    source: {fileID: 0}
     volume: 0.3
     pitch: 1
     loop: 0
+  - name: Track2
+    clip: {fileID: 8300000, guid: 95b05e9c6fc27ba4680419d83586146a, type: 3}
+    source: {fileID: 0}
+    volume: 0.4
+    pitch: 1.2
+    loop: 1
+  - name: Track3
+    clip: {fileID: 8300000, guid: 508eb3725ab769b4f856c8856acb8834, type: 3}
+    source: {fileID: 0}
+    volume: 0.4
+    pitch: 1.2
+    loop: 1

@@ -43,8 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            jump = true;
-            playerAnimator.SetBool("isJumping", true);
+            Jump();
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -82,5 +81,6 @@ public class PlayerMovement : MonoBehaviour
     {
         jump = true;
         playerAnimator.SetBool("isJumping", true);
+        FindObjectOfType<AudioManager>().playSound("JumpSound");
     }
 }

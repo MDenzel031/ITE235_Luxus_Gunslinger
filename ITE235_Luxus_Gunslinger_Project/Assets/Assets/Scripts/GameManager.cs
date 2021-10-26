@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<AudioManager>().playSound("bgMusic");
+        FindObjectOfType<AudioManager>().playSound("Track2");
 
         deathSoundSource = FindObjectOfType<AudioManager>().getSound("deathSound");
         currentLives = new PreferenceHelper().getLives();
@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
             FindObjectOfType<CharacterController2D>().enabled = false;
             player.GetComponent<Animator>().SetBool("isHurt", true);
             FindObjectOfType<AudioManager>().stopSound("bgMusic");
+            FindObjectOfType<AudioManager>().stopSound("Track2");
             Instantiate(playerDeathAnimation, player.transform.position, player.transform.rotation);
             player.SetActive(false);
             isDeathSoundSourcePlaying = true;

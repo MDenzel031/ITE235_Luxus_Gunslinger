@@ -60316,7 +60316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0333333, y: -0.06000018, z: -10}
+  m_LocalPosition: {x: -3.0284972, y: -0.06000018, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 798158768}
@@ -61461,11 +61461,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1218645089312855786, guid: 842d85fc9f043d7468f23a4f68b594b3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1218645089312855786, guid: 842d85fc9f043d7468f23a4f68b594b3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2325420839461925016, guid: 842d85fc9f043d7468f23a4f68b594b3, type: 3}
       propertyPath: maxHealth
@@ -61518,6 +61518,10 @@ PrefabInstance:
     - target: {fileID: 3130553700359176827, guid: 842d85fc9f043d7468f23a4f68b594b3, type: 3}
       propertyPath: m_Name
       value: SkeletonWithLimits
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130553700359176827, guid: 842d85fc9f043d7468f23a4f68b594b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8244489701163711740, guid: 842d85fc9f043d7468f23a4f68b594b3, type: 3}
       propertyPath: attackDistance
