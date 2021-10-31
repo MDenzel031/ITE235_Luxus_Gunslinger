@@ -10,6 +10,7 @@ TagManager:
   - Coins
   - DeathObstacle/Skeleton
   - DeathObstacle/Goblin
+  - platforms
   layers:
   - Default
   - TransparentFX

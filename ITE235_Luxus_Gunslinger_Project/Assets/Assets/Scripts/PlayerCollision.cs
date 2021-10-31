@@ -21,7 +21,15 @@ public class PlayerCollision : MonoBehaviour
             FindObjectOfType<GameManager>().playerDeath();
             FindObjectOfType<AudioManager>().playSound("waterSplash");
         }
+
+        if (collision.collider.CompareTag("platforms"))
+        {
+            FindObjectOfType<PlayerMovement>().playerAnimator.SetBool("isJumping", false);
+
+        }
     }
+
+
 
 
 

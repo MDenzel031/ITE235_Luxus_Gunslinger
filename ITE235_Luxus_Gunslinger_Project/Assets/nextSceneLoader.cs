@@ -12,4 +12,10 @@ public class nextSceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+
+    public void loadMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

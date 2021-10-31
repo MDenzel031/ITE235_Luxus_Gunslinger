@@ -31,13 +31,27 @@ public class GameManager : MonoBehaviour
 
         deathSoundSource = FindObjectOfType<AudioManager>().getSound("deathSound");
         currentLives = new PreferenceHelper().getLives();
-        if(currentLives != null)
+        if(currentLives  != 0)
         {
             livesText.text = currentLives.ToString();
         }
         else
         {
-            livesText.text = "No value";
+            PlayerPrefs.SetInt("Lives", 3);
+            livesText.text = "3";
+        }
+
+        try
+        {
+            int playerScore = PlayerPrefs.GetInt("playerScore");
+            if (playerScore != null)
+            {
+                coinText.text = playerScore.ToString();
+            }
+        }
+        catch(Exception e)
+        {
+            
         }
     }
 
@@ -47,12 +61,12 @@ public class GameManager : MonoBehaviour
 
         if(isPause == true)
         {
-            Sound s = FindObjectOfType<AudioManager>().decreaseSoundVolume("bgMusic");
+            Sound s = FindObjectOfType<AudioManager>().decreaseSoundVolume("Track2");
             s.source.volume = 0.2f;
         }
         else
         {
-            Sound s = FindObjectOfType<AudioManager>().decreaseSoundVolume("bgMusic");
+            Sound s = FindObjectOfType<AudioManager>().decreaseSoundVolume("Track2");
             s.source.volume = s.volume;
         }
 
@@ -113,6 +127,7 @@ public class GameManager : MonoBehaviour
 
         if(currentIndex < totalIndex)
         {
+            Debug.Log("Current ActiveScene: "+currentIndex.ToString());
             SceneManager.LoadScene(currentIndex + 1);
         }
         else
@@ -139,6 +154,8 @@ public class GameManager : MonoBehaviour
             new PreferenceHelper().saveData(3);
             gameOverPanel.SetActive(true);
             isGameOver = true;
+
+            PlayerPrefs.DeleteKey("PlayerScore");
 
         }
         else

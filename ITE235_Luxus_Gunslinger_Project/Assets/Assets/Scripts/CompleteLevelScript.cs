@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class CompleteLevelScript : MonoBehaviour
 {
     public GameObject[] panels;
-
+    public Text currentScore;
 
     //private void Awake()
     //{
@@ -18,11 +18,17 @@ public class CompleteLevelScript : MonoBehaviour
 
     public void nextLevel()
     {
+
+        int tempScore = int.Parse(currentScore.text);
+        PlayerPrefs.SetInt("playerScore", tempScore);
+
         FindObjectOfType<GameManager>().nextLevel();
     }
 
     public void Quit()
     {
+        PlayerPrefs.DeleteKey("playerScore");
+        PlayerPrefs.DeleteKey("Lives");
         SceneManager.LoadScene(0);
     }
 

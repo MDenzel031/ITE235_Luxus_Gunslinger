@@ -23,7 +23,9 @@ public class GameOverScript : MonoBehaviour
 
     public void restartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.DeleteKey("playerScore");
+        PlayerPrefs.DeleteKey("Lives");
+        SceneManager.LoadScene(1);
     }
 
 
@@ -36,6 +38,8 @@ public class GameOverScript : MonoBehaviour
 
     public void stopGameOverMusic()
     {
+        PlayerPrefs.DeleteKey("playerScore");
+        PlayerPrefs.DeleteKey("Lives");
         FindObjectOfType<AudioManager>().stopSound("gameOverMusic");
         SceneManager.LoadScene(0);
 
