@@ -53,9 +53,10 @@ public class completion : MonoBehaviour
         
     }
 
-    public void levelCompleteMusic()
+    public void victoryMusic()
     {
-        FindObjectOfType<AudioManager>().playSound("levelCompleteMusic");
+        Debug.Log("Victory Music is Playing");
+        FindObjectOfType<AudioManager>().playSound("VictoryMusic");
     }
 
 

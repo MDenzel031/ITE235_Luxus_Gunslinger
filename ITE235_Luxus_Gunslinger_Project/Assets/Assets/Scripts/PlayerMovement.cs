@@ -23,20 +23,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-       horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        //horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        //if (joystick.Horizontal >= .2f)
-        //{
-        //    horizontalMove = runSpeed;
-        //}
-        //else if (joystick.Horizontal <= -.2f)
-        //{
-        //    horizontalMove = -runSpeed;
-        //}
-        //else
-        //{
-        //    horizontalMove = 0f;
-        //}
+        if (joystick.Horizontal >= .2f)
+        {
+            horizontalMove = runSpeed;
+        }
+        else if (joystick.Horizontal <= -.2f)
+        {
+            horizontalMove = -runSpeed;
+        }
+        else
+        {
+            horizontalMove = 0f;
+        }
 
 
         playerAnimator.SetFloat("Speed", Mathf.Abs(horizontalMove));

@@ -13,12 +13,12 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            fireAnimation = !fireAnimation;
-            weaponAnimation.SetBool("isFiring", fireAnimation);
-            Shoot();
-        }
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    fireAnimation = !fireAnimation;
+        //    weaponAnimation.SetBool("isFiring", fireAnimation);
+        //    Shoot();
+        //}
 
     }
 

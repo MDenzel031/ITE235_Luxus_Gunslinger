@@ -140,3 +140,9 @@ MonoBehaviour:
     volume: 0.4
     pitch: 1.2
     loop: 1
+  - name: VictoryMusic
+    clip: {fileID: 8300000, guid: 054ee446616e0124e914654ade3065d3, type: 3}
+    source: {fileID: 0}
+    volume: 0.6
+    pitch: 1
+    loop: 1
